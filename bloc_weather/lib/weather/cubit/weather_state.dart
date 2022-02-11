@@ -41,5 +41,3 @@ class WeatherState extends Equatable {
   @override
   List<Object?> get props => [status, temperatureUnits, weather];
 }
-
-// class WeatherInitial extends WeatherState {}

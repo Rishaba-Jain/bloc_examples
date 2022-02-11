@@ -225,7 +225,7 @@ void main() {
                 .having(
                   (w) => w.temperature,
                   'temperature',
-                  Temperature(value: weatherTemperature.toFahrenheit()),
+                  Temperature(value: weatherTemperature),
                 )
                 .having((w) => w.location, 'location', weatherLocation),
           ),
@@ -293,7 +293,7 @@ void main() {
             temperatureUnits: TemperatureUnits.celsius,
             weather: Weather(
               location: weatherLocation,
-              temperature: Temperature(value: weatherTemperature),
+              temperature: Temperature(value: weatherTemperature.toCelsius()),
               lastUpdated: DateTime(2020),
               condition: WeatherCondition.rainy,
             ),
@@ -322,9 +322,8 @@ void main() {
             temperatureUnits: TemperatureUnits.fahrenheit,
             weather: Weather(
               location: weatherLocation,
-              temperature: Temperature(
-                value: weatherTemperature.toFahrenheit(),
-              ),
+              temperature:
+                  Temperature(value: weatherTemperature.toFahrenheit()),
               lastUpdated: DateTime(2020),
               condition: WeatherCondition.rainy,
             ),

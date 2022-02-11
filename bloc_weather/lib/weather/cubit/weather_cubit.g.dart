@@ -20,7 +20,7 @@ WeatherState _$WeatherStateFromJson(Map<String, dynamic> json) => WeatherState(
 Map<String, dynamic> _$WeatherStateToJson(WeatherState instance) =>
     <String, dynamic>{
       'status': _$WeatherStatusEnumMap[instance.status],
-      'weather': instance.weather,
+      'weather': instance.weather.toJson(),
       'temperatureUnits': _$TemperatureUnitsEnumMap[instance.temperatureUnits],
     };
 
