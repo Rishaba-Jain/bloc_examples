@@ -1,13 +1,13 @@
-// Copyright (c) 2021, Very Good Ventures
-// https://verygood.ventures
-//
-// Use of this source code is governed by an MIT-style
-// license that can be found in the LICENSE file or at
-// https://opensource.org/licenses/MIT.
-
-import 'package:bloc_todos/app/app.dart';
 import 'package:bloc_todos/bootstrap.dart';
+import 'package:flutter_services_binding/flutter_services_binding.dart';
+import 'package:local_storage_todos_api/local_storage_todos_api.dart';
 
-void main() {
-  bootstrap(() => const App());
+Future<void> main() async {
+  FlutterServicesBinding.ensureInitialized();
+
+  final todosApi = LocalStorageTodosApi(
+    plugin: await SharedPreferences.getInstance(),
+  );
+
+  bootstrap(todosApi: todosApi);
 }
