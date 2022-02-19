@@ -1,7 +1,7 @@
 import 'package:bloc_todos/edit_todo/view/edit_todo_page.dart';
 import 'package:bloc_todos/home/cubit/home_cubit.dart';
 import 'package:bloc_todos/stats/stats.dart';
-import 'package:bloc_todos/todos_overview/view/view.dart';
+import 'package:bloc_todos/todos_overview/todos_overview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -9,7 +9,7 @@ class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext build) {
+  Widget build(BuildContext context) {
     return BlocProvider(
       create: (_) => HomeCubit(),
       child: const HomeView(),
@@ -27,7 +27,7 @@ class HomeView extends StatelessWidget {
     return Scaffold(
       body: IndexedStack(
         index: selectedTab.index,
-        children: [const TodosOverviewPage(), StatsPage()],
+        children: const [TodosOverviewPage(), StatsPage()],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(

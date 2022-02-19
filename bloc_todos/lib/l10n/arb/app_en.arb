@@ -108,9 +108,5 @@
     "statsActiveTodoCountLabel": "Active todos",
     "@statsActiveTodoCountLabel": {
         "description": "Label text shown in the active todos count section of the Stats Page"
-    },
-    "asd": "",
-    "@": {
-        "description": " text shown in the  of the  Page "
     }
 }

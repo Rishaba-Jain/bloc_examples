@@ -12,14 +12,14 @@ class FlutterTodosTheme {
       snackBarTheme: const SnackBarThemeData(
         behavior: SnackBarBehavior.floating,
       ),
-      toggleableActiveColor: const Color(0xFF13B9ff),
+      toggleableActiveColor: const Color(0xFF13B9FF),
     );
   }
 
   static ThemeData get dark {
     return ThemeData(
       appBarTheme: const AppBarTheme(
-        color: const Color(0xFF13B9FF),
+        color: Color(0xFF13B9FF),
       ),
       colorScheme: ColorScheme.fromSwatch(
         brightness: Brightness.dark,

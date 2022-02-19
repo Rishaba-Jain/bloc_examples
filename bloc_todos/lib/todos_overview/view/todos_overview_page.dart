@@ -1,12 +1,10 @@
+import 'package:bloc_todos/edit_todo/edit_todo.dart';
 import 'package:bloc_todos/l10n/l10n.dart';
-import 'package:bloc_todos/todos_overview/bloc/todos_overview_bloc.dart';
-import 'package:bloc_todos/todos_overview/widgets/widgets.dart';
+import 'package:bloc_todos/todos_overview/todos_overview.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todos_repository/todos_repository.dart';
-
-import '../../edit_todo/edit_todo.dart';
 
 class TodosOverviewPage extends StatelessWidget {
   const TodosOverviewPage({Key? key}) : super(key: key);
@@ -17,6 +15,7 @@ class TodosOverviewPage extends StatelessWidget {
       create: (context) => TodosOverviewBloc(
         todosRepository: context.read<TodosRepository>(),
       )..add(const TodosOverviewSubscriptionRequested()),
+      child: const TodosOverviewView(),
     );
   }
 }
@@ -125,7 +124,7 @@ class TodosOverviewView extends StatelessWidget {
                           EditTodoPage.route(initialTodo: todo),
                         );
                       },
-                    )
+                    ),
                 ],
               ),
             );

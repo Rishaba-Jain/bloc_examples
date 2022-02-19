@@ -21,7 +21,7 @@ class TodoListTile extends StatelessWidget {
     final captionColor = theme.textTheme.caption?.color;
 
     return Dismissible(
-      key: Key('todoListTile_dismissable_${todo.id}'),
+      key: Key('todoListTile_dismissible_${todo.id}'),
       onDismissed: onDismissed,
       direction: DismissDirection.endToStart,
       background: Container(

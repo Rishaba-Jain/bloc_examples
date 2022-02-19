@@ -96,7 +96,7 @@ class _TitleField extends StatelessWidget {
     final hintText = state.initialTodo?.title ?? '';
 
     return TextFormField(
-      key: const Key('editTodoView_ title_textFormField'),
+      key: const Key('editTodoView_title_textFormField'),
       initialValue: state.title,
       decoration: InputDecoration(
         enabled: !state.status.isLoadingOrSuccess,
